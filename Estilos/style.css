@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #321e7a;
+}
+
+
+/* configuracion del menu de navegacion */
+.menu_url{
+
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* quitar menu al pasar el modo vista celular */
+    transform: translateY(-100%);
+    /* transicion sobre los elementos */
+    transition: 0.3s ease;
+}
+
+.item{
+    /* 1 ----> 10px */
+    /* separamos el texto */
+    padding: 0.5em;
+}
+
+.item:hover{
+    background-color:rgb(255, 255, 255);
+    border-radius: 25px;
+    /* padding: 3px; */
+    scale: 0.9;
+}
+
+.link_url{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.link_url:hover{
+    color: rgb(35, 17, 139);
+}
+
+.menu_icono{
+    width: 45px;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* clase generada en js */
+.Mayola{
+    transform: translateY(0);
+
+}
+
+img{
+    max-width: 100%;
+}
+
+.carousel-inner{
+    height: 90vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.info{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: auto;
+    width: 80%;
+}
+
+h2{
+    margin-top: 8%;
+    font-weight: bold;
+}
+
+p{
+    margin-bottom: 8%;
+}
+
+.a{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color:rgb(248, 234, 215);
+    color: rgb(28, 27, 110);
+    border-radius: 30px;
+    width: 13%;
+    margin-bottom: 8%;
+    font-weight: bold;
+    font-size: 18px;
+   
+}
+
+.a:hover{
+    background-color:rgb(30, 15, 85);
+    color:  rgb(253, 250, 246);
+    scale: 1.1;
+}
+
+.galeria{
+    width: 100%;
+    height: 660px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+.imagen{
+    width: 20%;
+    height: 660px;
+    /* todo lo que sobresale se elimina */
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.arriba{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 25vh 100vw /*equivale al 10 porciento*/ 0 0;
+    border-color: #321e7a transparent transparent transparent;
+}
+
+
+.abajo{
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    /* --------top---right----bottom----left */
+    /* para hacer ondas se deben trabajar por cada imagen, pero hay otras maneras mas faciles */
+    border-width: 0 0 25vh 100vw;
+    /* cuando empieza a cambiar los valores ponemos el color */
+    border-color: transparent transparent #321e7a transparent;
+}
+/* Sector Media Query */
+@media screen and (min-width: 768px){
+    .menu_url{
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.5em;
+        transform: translateY(0);
+    }
+
+    .menu_icono{
+        display: none;
+    }
+
+    .link_url{
+        padding: 1em;
+    }
+}
